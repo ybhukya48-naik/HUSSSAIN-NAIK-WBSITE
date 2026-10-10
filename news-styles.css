@@ -1,0 +1,52 @@
+﻿/* News and media card improvements */
+#newsGrid {
+  align-items: stretch;
+}
+
+#newsGrid .card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+#newsGrid .card img {
+  width: 100%;
+  height: 230px;
+  object-fit: contain;
+  background: #f3f5f7;
+}
+
+#newsGrid .card-body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+#newsGrid .card h3 {
+  margin: 0;
+  line-height: 1.45;
+}
+
+#newsGrid .source-link {
+  margin-top: auto;
+  padding-top: 8px;
+}
+
+#newsGrid .source-link a {
+  color: #174a35;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+#newsGrid .source-link a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+  #newsGrid .card img {
+    height: 210px;
+  }
+}

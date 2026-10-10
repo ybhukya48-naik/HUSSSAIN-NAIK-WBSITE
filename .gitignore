@@ -1,0 +1,18 @@
+﻿# Backup files
+*.backup-*
+*-backup-*.css
+*.backup-*.html
+*-before-*.html
+backup-*/
+backup-*/
+
+# Generated reports
+official-image-download-results.csv
+official-image-report.csv
+
+# Backup copies inside assets
+assets/*-backup*.js
+assets/*backup*.js
+
+# Incomplete downloads
+*.crdownload

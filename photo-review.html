@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gallery Photo Review</title>
+<style>
+body{font-family:Arial,sans-serif;margin:0;padding:20px;background:#f3f5f2;color:#183b2a}
+header{position:sticky;top:0;background:#fff;padding:16px;border-radius:12px;z-index:5;box-shadow:0 2px 10px #0001}
+button{padding:10px 14px;margin:5px;border:0;border-radius:7px;background:#176b45;color:white;cursor:pointer}
+#grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:14px;margin-top:20px}
+figure{background:white;padding:8px;margin:0;border-radius:10px;box-shadow:0 2px 8px #0001}
+img{width:100%;height:190px;object-fit:cover;border-radius:7px}
+label{display:flex;align-items:center;gap:8px;padding:8px;font-size:14px}
+small{overflow-wrap:anywhere}
+</style>
+</head>
+<body>
+<header>
+<h2>Review Gallery Photos</h2>
+<p>Select the photos you want to KEEP in the website gallery.</p>
+<p id="count">Loading photos...</p>
+<button onclick="setAll(true)">Keep all</button>
+<button onclick="setAll(false)">Uncheck all</button>
+<button onclick="downloadSelection()">Download selected photo list</button>
+</header>
+<div id="grid"></div>
+<script src="assets/instagram-manifest.js"></script>
+<script>
+const photos = window.localInstagramPhotos || [];
+const grid = document.getElementById('grid');
+photos.forEach((src, i) => {
+  const fig = document.createElement('figure');
+  const img = document.createElement('img');
+  img.src = src;
+  img.loading = 'lazy';
+  img.alt = 'Gallery photo ' + (i + 1);
+  img.onerror = () => { img.alt = 'Image failed to load'; img.style.display = 'none'; };
+  const label = document.createElement('label');
+  const box = document.createElement('input');
+  box.type = 'checkbox';
+  box.checked = true;
+  box.dataset.src = src;
+  box.addEventListener('change', updateCount);
+  const name = document.createElement('small');
+  name.textContent = src.split('/').pop();
+  label.append(box, name);
+  fig.append(img, label);
+  grid.append(fig);
+});
+function updateCount(){
+  const checked = [...grid.querySelectorAll('input:checked')].length;
+  document.getElementById('count').textContent =
+    checked + ' of ' + photos.length + ' photos selected';
+}
+function setAll(value){
+  grid.querySelectorAll('input').forEach(box => box.checked = value);
+  updateCount();
+}
+function downloadSelection(){
+  const selected = [...grid.querySelectorAll('input:checked')].map(box => box.dataset.src);
+  const content = 'window.localInstagramPhotos=' + JSON.stringify(selected) + ';';
+  const blob = new Blob([content], {type:'text/javascript'});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'instagram-manifest.js';
+  a.click();
+  URL.revokeObjectURL(url);
+}
+updateCount();
+</script>
+</body>
+</html>

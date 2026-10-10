@@ -1,0 +1,151 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Official portfolio of Jatothu Hussain Nayak, featuring public service, official engagements, news coverage, and photographs." />
+  <title>Jatothu Hussain Nayak | New Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Teko:wght@500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="enhancements.css" />
+  <link rel="stylesheet" href="news-styles.css" />
+</head>
+<body>
+  <header class="hero">
+    <nav class="top-nav shell">
+      <div class="brand">JHN</div>
+      <a class="nav-btn" href="#latest">Latest Updates</a>
+      <a class="nav-btn" href="#timeline">Past Services</a>
+      <a class="nav-btn" href="#gallery">Auto Gallery</a>
+    </nav>
+
+    <div class="shell hero-grid">
+      <div>
+        
+        <h1>Jatothu Hussain Nayak</h1>
+        <p class="lead">Latest public service updates, year-wise milestones, and verified photo highlights collected from official sources.</p>
+        <div class="hero-stats">
+          <article><strong>2017-2024</strong><span>Service Archive</span></article>
+          <article><strong>24+</strong><span>Curated Photos</span></article>
+          <article><strong>100%</strong><span>Mobile Ready</span></article>
+        </div>
+      </div>
+      <div class="hero-highlight">
+        <img src="https://jatothuhussainnayak.com/wp-content/uploads/2024/05/DSC01446-scaled.jpg" alt="Latest public event" />
+      </div>
+    </div>
+  </header>
+
+  <main class="shell main-layout">
+    <section id="latest" class="section-block">
+      <div class="section-head">
+        <h2>Latest Service Updates</h2>
+        <p>Newly added latest photo and activity cards</p>
+      </div>
+      <div id="latestGrid" class="card-grid"></div>
+    </section>
+
+    <section id="gallery" class="section-block">
+      <div class="section-head">
+        
+        <p>Continuous horizontal photo stream (pauses on hover)</p>
+      </div>
+      <div class="gallery-controls" role="tablist" aria-label="Gallery filters">
+        <button class="gallery-filter active" type="button" data-filter="all">All Photos</button>
+        <button class="gallery-filter" type="button" data-filter="website">Website</button>
+      </div>
+      <div class="scroll-shell">
+        <div id="photoTrack" class="photo-track"></div>
+      </div>
+    </section>
+
+    <section id="timeline" class="section-block">
+      <div class="section-head">
+        <h2>Past Services Timeline</h2>
+        <p>Click a year to view previous milestones</p>
+      </div>
+      <div id="yearTabs" class="year-tabs"></div>
+      <div id="pastGrid" class="card-grid"></div>
+    </section>
+
+    <section class="section-block">
+      <div class="section-head">
+<section id="education-qualifications" class="section-block">
+  <div class="section-head">
+    <h2>Education &amp; Qualifications</h2>
+  </div>
+  <article class="bio-card">
+    <p>Explore education and qualification details using reliable public records.</p>
+    <p><a href="https://myneta.info/telangana2023/candidate.php?candidate_id=169" target="_blank" rel="noopener noreferrer">View publicly available election affidavit ↗</a></p>
+  </article>
+</section>
+
+<section id="public-services" class="section-block">
+  <div class="section-head">
+    <h2>Public Services &amp; Development</h2>
+  </div>
+  <article class="bio-card">
+    <p>Public-service news and development updates from Mahabubabad and surrounding areas.</p>
+    <p><a href="https://www.deccanchronicle.com/southern-states/telangana/mahabubabad-gets-four-ambulances-to-strengthen-rural-healthcare-1986416" target="_blank" rel="noopener noreferrer">Read the ambulance-related news report ↗</a></p>
+  </article>
+</section>
+
+<section id="farmers-community-welfare" class="section-block">
+  <div class="section-head">
+    <h2>Farmers &amp; Community Welfare</h2>
+  </div>
+  <article class="bio-card">
+    <p>Information about community welfare and public representations should be supported by verifiable records.</p>
+    <p><a href="https://ncst.nic.in/uploads-dev/hearing/10483.pdf" target="_blank" rel="noopener noreferrer">View the NCST hearing document ↗</a></p>
+  </article>
+</section>
+        <h2>Biography Snapshot</h2>
+      </div>
+      <article class="bio-card">
+        <p id="bioSummary"></p>
+        <h3>Main Points</h3>
+        <ul id="bioPoints" class="bio-list"></ul>
+        <h3>Political Initiatives</h3>
+        <ul id="politicalPoints" class="bio-list"></ul>
+        <h3>Social Initiatives</h3>
+        <ul id="socialPoints" class="bio-list"></ul>
+        <h3>Welfare Scheme Focus</h3>
+        <ul id="schemePoints" class="bio-list"></ul>
+      </article>
+    </section>
+
+    <section class="section-block">
+      <div class="section-head">
+        <h2>News and Media Highlights</h2>
+      </div>
+      <div id="newsGrid" class="card-grid"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="shell footer-row">
+      <p>New portfolio build for Hussain Nayak - compiled from provided official sources.</p>
+      <div class="footer-links">
+        <a href="https://jatothuhussainnayak.com/" target="_blank" rel="noopener">Official Website</a>
+        <a href="https://www.instagram.com/jhussainnayak/" target="_blank" rel="noopener">Instagram</a>
+      </div>
+    </div>
+  </footer>
+
+  <div id="lightbox" class="lightbox" aria-hidden="true">
+    <button id="lightboxClose" class="lightbox-close" type="button" aria-label="Close image viewer">x</button>
+    <img id="lightboxImage" src="" alt="Expanded gallery image" />
+    <p id="lightboxCaption"></p>
+  </div>
+
+  <script src="assets/instagram-manifest.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
+
+
+
+
+
